@@ -1,8 +1,13 @@
-import "../styles/globals.css";
-import type { AppProps } from "next/app";
+import '../styles/globals.css'
+import type { AppProps } from 'next/app'
+import { MintProvider } from '../context/MintContext.js'
 
 function MyApp({ Component, pageProps }: AppProps) {
-    return <Component {...pageProps} />;
+  return (
+    <MintProvider>
+      <Component {...pageProps} />
+    </MintProvider>
+  )
 }
 
-export default MyApp;
+export default MyApp
