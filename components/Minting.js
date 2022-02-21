@@ -8,38 +8,50 @@ const Minting = () => {
   const { bool, changeBool } = useContext(MintContext)
 
   return (
-    <div className="-mt-20 flex flex-col items-center justify-center">
-      <div className="bg-[#\\] bg-[url('../images/featuring-bg.png')]   bg-contain bg-no-repeat flex flex-col items-center justify-center">
-        <Image
-          alt=""
-          src={require('../images/mint-desc.png')}
-          className="object-scale-down"
-          layout="fixed"
-          height={100}
-          width={900}
-        />
-        <div className="flex items-center justify-center">
-          <Image
-            alt=""
-            src={require('../images/minus.png')}
-            layout="fixed"
-            className="nav-items object-scale-down "
-          />
-          <div className="-ml-32">
+    <div className=" flex flex-col items-center justify-center mt-20">
+      <div className="bg-[url('../images/featuring-bg.png')] h-[100vh]     bg-contain bg-no-repeat flex flex-col items-center justify-center">
+        <div className="-mt-56">
+          <div className=" -mt-36 flex justify-end">
             <Image
               alt=""
-              src={require('../images/zero.png')}
+              src={require('../images/mascot.png')}
+              className="object-scale-down"
+              layout="fixed"
+              height={100}
+              width={200}
+            />
+          </div>
+          <Image
+            alt=""
+            src={require('../images/mint-desc.png')}
+            className="object-scale-down"
+            layout="fixed"
+            height={100}
+            width={900}
+          />
+          <div className="flex items-center justify-center -mt-10">
+            <Image
+              alt=""
+              src={require('../images/minus.png')}
+              layout="fixed"
+              className="nav-items object-scale-down"
+            />
+            <div className="-ml-32">
+              <Image
+                alt=""
+                src={require('../images/zero.png')}
+                layout="fixed"
+                className="nav-items object-scale-down "
+              />
+            </div>
+
+            <Image
+              alt=""
+              src={require('../images/plus.png')}
               layout="fixed"
               className="nav-items object-scale-down "
             />
           </div>
-
-          <Image
-            alt=""
-            src={require('../images/plus.png')}
-            layout="fixed"
-            className="nav-items object-scale-down "
-          />
         </div>
       </div>
     </div>

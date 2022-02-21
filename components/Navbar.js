@@ -1,9 +1,14 @@
 import Image from 'next/image'
 import React from 'react'
+import { MintContext } from '../context/MintContext.js'
+import { useContext } from 'react'
+import { useEffect } from 'react'
 
 const Navbar = () => {
+  const { account, connectWallet } = useContext(MintContext)
+
   return (
-    <div className="bg-[url('../images/NavBar.png')] bg-n flex items-center p-4 justify-evenly ">
+    <div className="bg-[url('../images/NavBar.png')] fixed w-full z-50 flex items-center p-4 justify-evenly ">
       <div className="flex items-center">
         <Image
           src={require('../images/logo.png')}
@@ -54,9 +59,11 @@ const Navbar = () => {
             width={240}
             // layout="fill"
             className="nav-items"
+            onClick={connectWallet}
           />
         </div>
       </div>
+      <h1 className="text-sm">{account}</h1>
     </div>
   )
 }
