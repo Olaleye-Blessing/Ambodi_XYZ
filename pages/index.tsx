@@ -1,11 +1,14 @@
-import type { NextPage } from "next";
+import type { NextPage } from 'next'
+import Navbar from '../components/Navbar.js'
+import Hero from '../components/Hero.js'
 
 const Home: NextPage = () => {
-    return (
-        <main>
-            <h1 className="text-3xl font-bold">Home </h1>
-        </main>
-    );
-};
+  return (
+    <div className="">
+      <Navbar />
+      <Hero />
+    </div>
+  )
+}
 
-export default Home;
+export default Home
