@@ -8,51 +8,33 @@ const NonMint = () => {
 
   console.log(bool)
   return (
-    <div className="">
-      <div className=" flex flex-col items-center justify-center mt-20">
-        <div className="bg-[url('../images/featuring-bg.png')] h-[100vh] bg-contain bg-no-repeat flex flex-col items-center justify-center">
-          <div className="-mt-56">
-            <div className=" -mt-10 flex justify-end">
-              <Image
-                alt=""
-                src={require('../images/mascot.png')}
-                className="object-scale-down"
-                layout="fixed"
-                height={100}
-                width={200}
-              />
-            </div>
-
-            <div className="flex flex-col items-center justify-center mt">
-              <Image
-                alt=""
-                src={require('../images/featuring.png')}
-                layout="fixed"
-                className="nav-items object-scale-down"
-              />
-              <div>
-                <Image
-                  src={require('../images/mint.png')}
-                  layout="fixed"
-                  alt=""
-                  className="cursor-pointer"
-                  onClick={changeBool}
-                />
-              </div>
-            </div>
-          </div>
+    <div className="flex items-center justify-center">
+      <div className="bg-[url('../images/featuring-bg.png')] mt-[20vh] lg:mt-[40vh]  lg:h-[130vh] h-[50vh] w-full max-w-xs md:max-w-3xl lg:max-w-4xl lg:w-auto  bg-contain bg-no-repeat items-center justify-center">
+        <div className=" -mt-8  flex justify-end -mr-6">
+          <Image
+            alt=""
+            src={require('../images/mascot.png')}
+            className="object-scale-down lg:object-fill"
+            layout="fixed"
+            height={70}
+            width={100}
+          />
+        </div>
+        <div className="mt">
+          <Image src={require('../images/featuring.png')} alt="" />
+        </div>
+        <div className=" flex justify-center -mt-10  items-center">
+          <Image
+            src={require('../images/mint.png')}
+            className="h-[5vh] w-[10vh] object-scale-down"
+            alt=""
+            // height={50}
+            // width={100}
+            // objectFit="scale-down"
+            onClick={changeBool}
+          />
         </div>
       </div>
-
-      {/* <div className="flex -mt-[170px] ml-40 lg:-mt-[100px] lg:ml-56 h-[50px] w-[100px] lg:h-[50px] lg:w-[250px]">
-        <Image
-          src={require('../images/mint.png')}
-          layout="fixed"
-          alt=""
-          className="cursor-pointer"
-          onClick={changeBool}
-        />
-      </div> */}
     </div>
   )
 }
