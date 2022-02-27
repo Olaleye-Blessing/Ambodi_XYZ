@@ -9,6 +9,27 @@ export const MintContext = React.createContext()
 export const MintProvider = ({ children }) => {
   const [bool, setBool] = useState(false)
   const [account, setAccount] = useState('')
+
+  const [count, setCount] = useState(0)
+
+  const increaseCount = () => {
+    if (count === 0) {
+      setCount(1)
+    }
+    if (count === 1) {
+      setCount(2)
+    }
+  }
+
+  const decreaseCount = () => {
+    if (count === 2) {
+      setCount(1)
+    }
+    if (count === 1) {
+      setCount(0)
+    }
+  }
+
   const changeBool = () => {
     if (bool === false) {
       setBool(true)
@@ -40,7 +61,17 @@ export const MintProvider = ({ children }) => {
   // }, [connectWallet])
 
   return (
-    <MintContext.Provider value={{ bool, changeBool, account, connectWallet }}>
+    <MintContext.Provider
+      value={{
+        bool,
+        changeBool,
+        account,
+        connectWallet,
+        count,
+        increaseCount,
+        decreaseCount,
+      }}
+    >
       {children}
     </MintContext.Provider>
   )

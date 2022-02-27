@@ -1,57 +1,108 @@
 import Image from 'next/image'
-import React from 'react'
+import React, { useState } from 'react'
 import { MintContext } from '../context/MintContext.js'
 
 import { useContext } from 'react'
 
 const Minting = () => {
-  const { bool, changeBool } = useContext(MintContext)
+  const { bool, changeBool, count, increaseCount, decreaseCount } = useContext(
+    MintContext,
+  )
+  const [myImage, setImage] = useState(require('../images/zero.png'))
+
+  const img0 = require('../images/zero.png')
+  const img1 = require('../images/one.png')
+  const img2 = require('../images/two.png')
+
+  const putImage = () => {
+    if (count === 0) {
+      setImage(img0)
+    } else if (count === 1) {
+      setImage(img1)
+    } else if (count === 2) {
+      setImage(img2)
+    }
+  }
 
   return (
-    <div className=" flex flex-col items-center justify-center mt-20">
-      <div className="bg-[url('../images/featuring-bg.png')] h-[100vh]     bg-contain bg-no-repeat flex flex-col items-center justify-center">
-        <div className="-mt-56">
-          <div className=" -mt-36 flex justify-end">
-            <Image
-              alt=""
-              src={require('../images/mascot.png')}
-              className="object-scale-down"
-              layout="fixed"
-              height={100}
-              width={200}
-            />
-          </div>
+    <div className="flex items-center justify-center">
+      <div className="bg-[url('../images/featuring-bg.png')] mt-24 lg:-mt-36  h-[50vh] max-w-xs md:max-w-3xl bg-contain bg-no-repeat items-center justify-center">
+        <div className=" -mt-8  flex justify-end -mr-6">
           <Image
             alt=""
-            src={require('../images/mint-desc.png')}
-            className="object-scale-down"
+            src={require('../images/mascot.png')}
+            className="object-scale-down lg:object-fill"
             layout="fixed"
-            height={100}
-            width={900}
+            height={70}
+            width={100}
           />
-          <div className="flex items-center justify-center -mt-10">
-            <Image
-              alt=""
-              src={require('../images/minus.png')}
-              layout="fixed"
-              className="nav-items object-scale-down"
-            />
-            <div className="-ml-32">
-              <Image
-                alt=""
-                src={require('../images/zero.png')}
-                layout="fixed"
-                className="nav-items object-scale-down "
-              />
-            </div>
+        </div>
+        <div className="-mt-7">
+          <Image
+            src={require('../images/mint-desc.png')}
+            alt=""
+            height={150}
+            width={850}
+          />
+        </div>
 
+        <div className="flex items-center justify-center -mt-9 h-[9vh]">
+          <Image
+            alt=""
+            src={require('../images/minus.png')}
+            // layout="fixed"
+            className="nav-items object-scale-down cursor-pointer"
+            onClick={() => {
+              decreaseCount(), putImage(), console.log(count)
+            }}
+          />
+          <div className="-ml-10">
             <Image
               alt=""
-              src={require('../images/plus.png')}
-              layout="fixed"
+              src={myImage}
+              // layout="fixed"
               className="nav-items object-scale-down "
             />
           </div>
+
+          <Image
+            alt=""
+            src={require('../images/plus.png')}
+            // layout="fixed"
+            className="nav-items object-scale-down cursor-pointer -ml-20 "
+            onClick={() => {
+              increaseCount()
+              putImage()
+              console.log(count)
+            }}
+          />
+        </div>
+
+        <div className="flex items-center justify-center -mt-4 lg:mt-10">
+          <Image
+            alt=""
+            src={require('../images/cost.png')}
+            height={50}
+            width={200}
+          />
+          <Image
+            alt=""
+            src={require('../images/max.png')}
+            height={50}
+            width={200}
+          />
+        </div>
+
+        <div className=" flex justify-center -mt-12 lg:-mt-5  items-center">
+          <Image
+            src={require('../images/mint.png')}
+            className="h-[5vh] w-[10vh] object-scale-down"
+            alt=""
+            // height={50}
+            // width={100}
+            // objectFit="scale-down"
+            onClick={changeBool}
+          />
         </div>
       </div>
     </div>

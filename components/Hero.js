@@ -13,18 +13,9 @@ const Hero = () => {
   console.log(bool)
 
   return (
-    <div className="flex items-center justify-center bg-no-repeat bg-cover -mt-3 h-[100vh] lg:h-[150vh]  bg-[url('../images/landing-bg.png')]">
-      <div className="flex flex-col  items-center justify-start">
+    <div className="flex items-center justify-center bg-no-repeat bg-cover -mt-3 h-screen lg:h-[150vh]  bg-[url('../images/landing-bg.png')]">
+      <div className="flex flex-col  items-center justify-center">
         {bool ? <Minting /> : <NonMint />}
-        {/* <div className="flex -mt-[170px] ml-40 lg:-mt-[100px] lg:ml-56 h-[50px] w-[100px] lg:h-[50px] lg:w-[250px]">
-          <Image
-            src={require('../images/mint.png')}
-            layout="fixed"
-            alt=""
-            className="cursor-pointer"
-            onClick={changeBool}
-          />
-        </div> */}
       </div>
     </div>
   )
