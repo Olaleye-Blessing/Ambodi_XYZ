@@ -26,7 +26,7 @@ const Minting = () => {
 
   return (
     <div className="flex items-center justify-center">
-      <div className="bg-[url('../images/featuring-bg.png')] mt-24 lg:-mt-36  h-[50vh] max-w-xs md:max-w-3xl bg-contain bg-no-repeat items-center justify-center">
+      <div className="bg-[url('../images/featuring-bg.png')] mt-24 lg:-mt-3  h-[50vh] max-w-xs md:max-w-3xl bg-contain bg-no-repeat items-center justify-center">
         <div className=" -mt-8  flex justify-end -mr-6">
           <Image
             alt=""
@@ -47,15 +47,18 @@ const Minting = () => {
         </div>
 
         <div className="flex items-center justify-center -mt-9 h-[9vh]">
-          <Image
-            alt=""
-            src={require('../images/minus.png')}
-            // layout="fixed"
-            className="nav-items object-scale-down cursor-pointer"
+          <div
             onClick={() => {
               decreaseCount(), putImage(), console.log(count)
             }}
-          />
+          >
+            <Image
+              alt=""
+              src={require('../images/minus.png')}
+              // layout="fixed"
+              className="nav-items object-scale-down cursor-pointer "
+            />
+          </div>
           <div className="-ml-10">
             <Image
               alt=""
@@ -65,17 +68,20 @@ const Minting = () => {
             />
           </div>
 
-          <Image
-            alt=""
-            src={require('../images/plus.png')}
-            // layout="fixed"
-            className="nav-items object-scale-down cursor-pointer -ml-20 "
+          <div
             onClick={() => {
               increaseCount()
               putImage()
               console.log(count)
             }}
-          />
+          >
+            <Image
+              alt=""
+              src={require('../images/plus.png')}
+              // layout="fixed"
+              className="nav-items object-scale-down cursor-pointer -ml-20 "
+            />
+          </div>
         </div>
 
         <div className="flex items-center justify-center -mt-4 lg:mt-10">
