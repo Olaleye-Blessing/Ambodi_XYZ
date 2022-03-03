@@ -23,7 +23,7 @@ const NonMint = () => {
         <div className="mt">
           <Image src={require('../images/featuring.png')} alt="" />
         </div>
-        <div className=" flex justify-center -mt-10  items-center">
+        <div className=" flex justify-center -mt-10 cursor-pointer  items-center">
           <Image
             src={require('../images/mint.png')}
             className="h-[5vh] w-[10vh] object-scale-down"

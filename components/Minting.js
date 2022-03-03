@@ -46,7 +46,7 @@ const Minting = () => {
           />
         </div>
 
-        <div className="flex items-center justify-center -mt-9 h-[9vh]">
+        <div className="flex items-center justify-center -mt-7 lg:-mt-4 h-[9vh]">
           <div
             onClick={() => {
               decreaseCount(), putImage(), console.log(count)
@@ -57,6 +57,9 @@ const Minting = () => {
               src={require('../images/minus.png')}
               // layout="fixed"
               className="nav-items object-scale-down cursor-pointer "
+              onClick={() => {
+                decreaseCount(), putImage(), console.log(count)
+              }}
             />
           </div>
           <div className="-ml-10">
@@ -80,6 +83,11 @@ const Minting = () => {
               src={require('../images/plus.png')}
               // layout="fixed"
               className="nav-items object-scale-down cursor-pointer -ml-20 "
+              onClick={() => {
+                increaseCount()
+                putImage()
+                console.log(count)
+              }}
             />
           </div>
         </div>
@@ -99,7 +107,7 @@ const Minting = () => {
           />
         </div>
 
-        <div className=" flex justify-center -mt-12 lg:-mt-5  items-center">
+        <div className=" flex justify-center -mt-12 lg:-mt-5 cursor-pointer  items-center">
           <Image
             src={require('../images/mint.png')}
             className="h-[5vh] w-[10vh] object-scale-down"
