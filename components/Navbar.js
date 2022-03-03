@@ -5,9 +5,15 @@ import { useContext } from 'react'
 import { useEffect } from 'react'
 import { MenuIcon } from '@heroicons/react/outline'
 import { useState } from 'react'
+import Authereum from 'authereum'
 
 const Navbar = () => {
   const { account, connectWallet } = useContext(MintContext)
+  const providerOptions = {
+    authereum: {
+      package: Authereum, // required
+    },
+  }
 
   const [drop, setDrop] = useState(false)
 

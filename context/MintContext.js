@@ -3,10 +3,19 @@ import { useState } from 'react'
 import { ethers } from 'ethers'
 import Web3Modal from 'web3modal'
 import { useEffect } from 'react'
+import WalletConnectProvider from '@walletconnect/web3-provider'
 
 export const MintContext = React.createContext()
 
 export const MintProvider = ({ children }) => {
+  const providerOptions = {
+    walletconnect: {
+      package: WalletConnectProvider, // required
+      options: {
+        infuraId: 'INFURA_ID', // required
+      },
+    },
+  }
   const [bool, setBool] = useState(false)
   const [account, setAccount] = useState('')
 
@@ -37,22 +46,22 @@ export const MintProvider = ({ children }) => {
       setBool(false)
     }
   }
-  const providerOptions = {
-    walletconnect: {},
-  }
 
   const connectWallet = async () => {
     const web3Modal = new Web3Modal({
       network: 'rinkeby',
       providerOptions,
-      disableInjectedProvider: false,
+      cacheProvider: true,
+      disableInjectedProvider: true,
     })
 
-    const instance = await web3Modal.connect()
+    const instance = await web3Modal.connect().catch((e) => console.log(e))
 
     const provider = new ethers.providers.Web3Provider(instance)
-    const signer = provider.getSigner()
-    setAccount((await signer.getAddress()).toString())
+    const signer = provider.getSigner().catch((e) => console.log(e))
+    setAccount(
+      (await signer.getAddress()).toString().catch((e) => console.log(e)),
+    )
     console.log(account)
   }
 
