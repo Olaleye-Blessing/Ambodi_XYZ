@@ -49,20 +49,17 @@ export const MintProvider = ({ children }) => {
 
   const connectWallet = async () => {
     const web3Modal = new Web3Modal({
-      network: 'rinkeby',
+      network: 'mainnet',
       providerOptions,
       cacheProvider: true,
-      disableInjectedProvider: true,
+      disableInjectedProvider: false,
     })
 
     const instance = await web3Modal.connect().catch((e) => console.log(e))
 
     const provider = new ethers.providers.Web3Provider(instance)
-    const signer = provider.getSigner().catch((e) => console.log(e))
-    setAccount(
-      (await signer.getAddress()).toString().catch((e) => console.log(e)),
-    )
-    console.log(account)
+    const signer = provider.getSigner()
+    setAccount((await signer.getAddress()).toString()), console.log(account)
   }
 
   // useEffect(() => {
