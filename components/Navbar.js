@@ -78,16 +78,18 @@ const Navbar = () => {
     return (
       <div className="bg-[#4C577C]">
         <div className="mt-2  flex flex-col lg:hidden items-center justify-center">
-          <div className="">
-            <Image
-              src={require('../images/collection-logo.png')}
-              alt="logo"
-              height={70}
-              width={200}
-              // layout="fill"
-              className="nav-items"
-            />
-          </div>
+          <Link href="/collections">
+            <div className="cursor-pointer">
+              <Image
+                src={require('../images/collection-logo.png')}
+                alt="logo"
+                height={70}
+                width={200}
+                // layout="fill"
+                className="nav-items"
+              />
+            </div>
+          </Link>
           <div className="-ml-5">
             <Image
               src={require('../images/team.png')}
