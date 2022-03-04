@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/link-passhref */
 import Image from 'next/image'
 import React from 'react'
 import { MintContext } from '../context/MintContext.js'
@@ -6,6 +7,7 @@ import { useEffect } from 'react'
 import { MenuIcon } from '@heroicons/react/outline'
 import { useState } from 'react'
 import Authereum from 'authereum'
+import Link from 'next/link'
 
 const Navbar = () => {
   const { account, connectWallet } = useContext(MintContext)
@@ -14,6 +16,8 @@ const Navbar = () => {
       package: Authereum, // required
     },
   }
+
+  const [connected, setConnected] = useState(require('../images/connect.png'))
 
   const [drop, setDrop] = useState(false)
 
@@ -29,16 +33,18 @@ const Navbar = () => {
     return (
       <div className="bg-[#4C577C]">
         <div className="mt-2 hidden lg:flex">
-          <div className="">
-            <Image
-              src={require('../images/collection-logo.png')}
-              alt="logo"
-              height={70}
-              width={200}
-              // layout="fill"
-              className="nav-items"
-            />
-          </div>
+          <Link href="/collections">
+            <div className="cursor-pointer">
+              <Image
+                src={require('../images/collection-logo.png')}
+                alt="logo"
+                height={70}
+                width={200}
+                // layout="fill"
+                className="nav-items"
+              />
+            </div>
+          </Link>
           <div className="-ml-5">
             <Image
               src={require('../images/team.png')}
@@ -51,13 +57,15 @@ const Navbar = () => {
           </div>
           <div className="-ml-5">
             <Image
-              src={require('../images/connect.png')}
+              src={connected}
               alt="logo"
               height={70}
               width={240}
               // layout="fill"
               className="nav-items cursor-pointer"
-              onClick={connectWallet}
+              onClick={() => {
+                connectWallet()
+              }}
             />
           </div>
           <h1 className="text-sm">{account}</h1>
@@ -92,13 +100,16 @@ const Navbar = () => {
           </div>
           <div className="-ml-5">
             <Image
-              src={require('../images/connect.png')}
+              src={connected}
               alt="logo"
               height={70}
               width={240}
               // layout="fill"
               className="nav-items cursor-pointer"
-              onClick={connectWallet}
+              onClick={() => {
+                connectWallet()
+                walletImage()
+              }}
             />
           </div>
           <h1 className="text-sm">{account}</h1>
