@@ -9,7 +9,7 @@ const Cactusclub: NextPage = () => {
             <CollectionPageContainer
                 imgSrc="/pages/collections/cactusHeaderBg.png"
                 extraMainClassName="sm:bg-[url('../images/pages/collections/CactusClubBg.png')] flex-col relative"
-                extraHeaderClassName=" mt-0"
+                extraHeaderClassName="m-auto"
             >
                 <footer className="absolute bottom-0 right-0 left-0 w-full">
                     <Image

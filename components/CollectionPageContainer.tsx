@@ -18,10 +18,10 @@ const CollectionPageContainer: FC<ICollectionPageContainer> = ({
             <Navbar />
 
             <main
-                className={`w-full h-screen bg-none bg-no-repeat bg-cover flex items-center justify-center pl-12 pt-24 ${extraMainClassName}`}
+                className={`w-full min-h-screen bg-none bg-no-repeat bg-cover flex items-center justify-center pl-12 pt-24 ${extraMainClassName}`}
             >
                 <header
-                    className={`w-8/12 h-full mt-[20rem] min-w-[10rem] ${extraHeaderClassName}`}
+                    className={`w-8/12 h-full min-w-[10rem] ${extraHeaderClassName}`}
                 >
                     <Image src={imgSrc} alt="" width={1112} height={488} />
                 </header>
