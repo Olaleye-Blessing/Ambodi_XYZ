@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react'
 import { useState } from 'react'
 import { ethers } from 'ethers'
@@ -63,7 +64,7 @@ export const MintProvider = ({ children }) => {
   }
 
   // useEffect(() => {
-  //   connectWallet()
+  //   connectWallet().catch((e) => console.log(e))
   // }, [connectWallet])
 
   return (
