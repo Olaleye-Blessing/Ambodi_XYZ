@@ -17,6 +17,7 @@ const Cactusclub: NextPage = () => {
                         alt=""
                         width={2112}
                         height={488}
+                        priority={true}
                     />
                 </footer>
             </CollectionPageContainer>

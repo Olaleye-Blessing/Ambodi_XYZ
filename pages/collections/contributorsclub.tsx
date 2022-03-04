@@ -9,7 +9,7 @@ const Contributorsclub: NextPage = () => {
             <CollectionPageContainer
                 imgSrc="/pages/collections/contributorsclubHeader.png"
                 extraMainClassName="sm:bg-[url('../images/pages/collections/contributorsclubBg.png')]"
-                extraHeaderClassName=""
+                extraHeaderClassName="-mt-40 sm:mt-40"
             />
         </>
     );
