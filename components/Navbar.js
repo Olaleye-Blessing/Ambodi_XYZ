@@ -123,15 +123,17 @@ const Navbar = () => {
   return (
     <div className="bg-[url('../images/NavBar.png bg-[#4C577C] sticky top-0 w-full z-50 flex flex-col lg:flex-row items-center p-4 pt-6 justify-evenly ">
       <div className="flex items-center">
-        <Image
-          src={require('../images/logo.png')}
-          alt="logo"
-          height={50}
-          width={350}
-          layout="fixed"
-          className="nav-items"
-          // objectFit="cover"
-        />
+        <Link href="/">
+          <Image
+            src={require('../images/logo.png')}
+            alt="logo"
+            height={50}
+            width={350}
+            layout="fixed"
+            className="nav-items"
+            // objectFit="cover"
+          />
+        </Link>
         <div className="-ml-14">
           <Image
             src={require('../images/mascot-2.png')}
